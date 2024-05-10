@@ -1,0 +1,68 @@
+name: OS brief tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  check_distributive_name:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: kel.osll.ru:8083/docker/ubuntu:os-brief-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run check_distributive_name.sh
+      run: |
+         cp -r /__e/01-os-brief-tests ./
+         cd 01-os-brief-tests
+         ./check_distributive_name.sh
+      shell: bash
+  check_distributive_version:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: kel.osll.ru:8083/docker/ubuntu:os-brief-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run check_distributive_version.sh
+      run: |
+         cp -r /__e/01-os-brief-tests ./
+         cd 01-os-brief-tests
+         ./check_distributive_version.sh
+      shell: bash
+  check_kernel_version:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: kel.osll.ru:8083/docker/ubuntu:os-brief-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run check_kernel_version.sh
+      run: |
+         cp -r /__e/01-os-brief-tests ./
+         cd 01-os-brief-tests
+         ./check_kernel_version.sh
+      shell: bash
+  check_ram:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: kel.osll.ru:8083/docker/ubuntu:os-brief-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run check_ram.sh
+      run: |
+         cp -r /__e/01-os-brief-tests ./
+         cd 01-os-brief-tests
+         ./check_ram.sh
+      shell: bash
+  check_used_root_space:    
+    runs-on: self-hosted
+    timeout-minutes: 1
+    container: kel.osll.ru:8083/docker/ubuntu:os-brief-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run check_used_root_space.sh
+      run: |
+         cp -r /__e/01-os-brief-tests ./
+         cd 01-os-brief-tests
+         ./check_used_root_space.sh
+      shell: bash

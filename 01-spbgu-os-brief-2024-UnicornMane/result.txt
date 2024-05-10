@@ -1,0 +1,5 @@
+Distributive name: Ubuntu
+Distributive version: 23.10
+Kernel version: 6.5.0-26-generic
+Total RAM: 3.8Gi
+Used root space: 4G
